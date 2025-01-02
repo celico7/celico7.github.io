@@ -1,3 +1,3 @@
 # celico7.github.io
 
-<a href="projet-petit-tardis/index.html"> Voir site </a>
+<a href="index.html"> Voir site </a>
