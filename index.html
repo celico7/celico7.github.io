@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Petit TARDIS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+body {
+  font-family: "Cabin", sans-serif;
+  background: linear-gradient(135deg, #4c6d86, #0D1117 80%);
+  color: white;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Effet de lumière subtile (inspiration Discord) */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 12, 12, 0.1), transparent);
+  animation: light-pulse 10s infinite;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: vortex 20s linear infinite;
+}
+
+@keyframes vortex {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Positionnement du titre */
+.container-titre {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.title {
+  font-weight: 800;
+  color: transparent;
+  font-size: 120px;
+  background: url("https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg");
+  background-position: 80% 60%;
+  -webkit-background-clip: text;
+  position: relative;
+  line-height: 90px;
+  letter-spacing: -3px;
+}
+
+/* Positionnement de la grille */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 100px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  grid-gap: 60px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Styles des éléments de la grille */
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009dbc20;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  height: 150px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10%;
+  z-index: 1;
+  position: relative;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.grid-item:hover{
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+}
+
+footer{
+  background-color: black;
+  opacity: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  padding-top: 7px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="container-titre">
+    <div class="title">Le Petit TARDIS</div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+        <a href="page1.html" class="grid-item">Le serveur</a>
+        <a href="page2.html" class="grid-item">Les minis-jeux</a>
+        <a href="page3.html" class="grid-item">Les évênements</a>
+        <a href="page4.html" class="grid-item">Doctor Who</a>
+    </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 - .celico</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
