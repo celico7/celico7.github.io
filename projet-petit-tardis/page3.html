@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/style-3.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- Menu Section -->
+        <div class="menu-section">
+            <a href="index.html">
+                <img src="/Logo_Petit_Tardis.png" alt="Maître des Fleurs" class="logo"></a>
+            <h1>Les évênements</h1>
+            <ul class="menu-links">
+                <li><a href="#" onclick="showSection('evenement')">News-PT</a></li>
+                <li><a href="#" onclick="showSection('hall-of-fleur')">Les procès</a></li>
+                <li><a href="#" onclick="showSection('submit-questions')">La roue</a></li>
+            </ul>
+            <a href="https://discord.gg/petit-tardis" target="_blank"> <i class="bi bi-discord"
+                    style="font-size: 30px; color:#5865F2"></i> </a>
+            <p>&copy; 2024 - .celico</p>
+            <a href="https://linktr.ee/celico_" target="_blank">Pour me contacter</a>
+        </div>
+
+        <div class="content-container">
+            <div id="evenement" class="content-section" style="display: none;">
+                <h2>Les évênements</h2>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="126" value="63" class="slider" id="myRange">
+                    <div id="resultContainer">
+                        <div id="dateDisplay">Date : N/A</div>
+                        <div id="eventDisplay">Événement : N/A</div>
+                        <button id="generateButton">Générer un événement aléatoire</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="hall-of-fleur" class="content-section" style="display: none;">
+                <h2>Hall of Fleur</h2>
+                <!-- Example of stats like in the second image -->
+                <div class="stats-section">
+                    <div class="stats-box">
+                        <h2>8714</h2>
+                        <p>participants uniques</p>
+                    </div>
+                    <div class="stats-box">
+                        <h2>25</h2>
+                        <p>points / joueur en moyenne</p>
+                    </div>
+                    <div class="stats-box">
+                        <h2>1h58</h2>
+                        <p>Durée moyenne d'une game</p>
+                    </div>
+                </div>
+                <div class="ranking-section">
+                    <h2>Classement</h2>
+                    <ol>
+                        <li>wh1t3pxl - 900 pts</li>
+                        <li>Calys_PewPew - 548 pts</li>
+                        <li>Hyli__ - 426 pts</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div id="submit-questions" class="content-section" style="display: none;">
+                <h2>Proposer des questions</h2>
+                <p>Formulaire pour soumettre des questions...</p>
+            </div>
+
+            <div id="ponce-shop" class="content-section" style="display: none;">
+                <h2>La Boutique Ponce</h2>
+                <p>Les articles disponibles dans la boutique...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script3.js"></script>
+</body>
+
+</html>
