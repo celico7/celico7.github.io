@@ -12,83 +12,43 @@
     <section>
         <div class="main">
             <div class="left">
-                <p>Bonbons <br /> <span class="gem-cost pink-text"> 5000 </span> </p>
+                <p>Bonbons <br /> <span class="gem-cost pink-text"> 500000000 </span> </p>
                 <div class="gem-img-container">
                     <img src="./assets/gem.png" alt="" class="gem-image" onclick="incrementGem(event)" draggable="false">
                 </div>
             </div>
+
+            <script id="upgrade-template" type="text/template">
+                <div class="upgrade type-{{type}}" onclick="buyUpgrade('{{name}}')" id="{{name}}-upgrade">
+                    <div class="left-section">
+                        <img src="{{image}}" alt="" class="upgrade-image">
+                    </div>
+                    <div class="mid-section">
+                        <h4>{{name}}</h4>
+                        <div class="cost-info">
+                            <p class="cost-text"> <span class="{{name}}-cost">{{cost}}</span> </p>
+                            <img src="./assets/gem.png" alt="" class="gem-img">
+                        </div>
+                    </div>
+                    <div class="right-section"> Level <span class="{{name}}-level">0</span> </div>
+
+                    <div class="next-level-info" id="{{name}}-next-level">
+                        <p id="{{name}}-next-p">+ <span class="{{name}}-increase">{{increase}}</span> gems <br /> per click</p>
+                    </div>
+                </div>
+            </script>
+
             <div class="right">
-                <div class="upgrade" onclick="buyUpgrade('clicker')">
-                    <div class="left-section">
-                        <img src="./assets/clicker-white.png" alt="" class="upgrade-image">
-                    </div>
-                    <div class="mid-section">
-                        <h4>Clicker</h4>
-                        <div class="cost-info">
-                            <p class="cost-text"> <span class="clicker-cost">10</span> </p>
-                            <img src="./assets/gem.png" alt="" class="gem-img">
-                        </div>
-                    </div>
-                    <div class="right-section"> Level <span class="clicker-level">0</span> </div>
-
-                    <div class="next-level-info">
-                        <p>+ <span class="clicker-increase">1</span> gems <br /> per click</p>
-                    </div>
+                <div class="right-navbar">
+                    <div id="upgrades-nav-button">Upgrades</div>
+                    <div id="skills-nav-button">Skills</div>
+                    <div id="artifacts-nav-button">Artefacts</div>
                 </div>
+                <div id="upgrades-container">
 
-                <div class="upgrade" onclick="buyUpgrade('pickaxe')">
-                    <div class="left-section">
-                        <img src="./assets/pickaxe.png" alt="" class="upgrade-image">
-                    </div>
-                    <div class="mid-section">
-                        <h4>pickaxe</h4>
-                        <div class="cost-info">
-                            <p class="cost-text"> <span class="pickaxe-cost">130</span> </p>
-                            <img src="./assets/gem.png" alt="" class="gem-img">
-                        </div>
-                    </div>
-                    <div class="right-section"> Level <span class="pickaxe-level">0</span> </div>
-
-                    <div class="next-level-info">
-                        <p>+ <span class="pickaxe-increase">4</span> gems <br /> per second</p>
-                    </div>
-                </div>
-
-                <div class="upgrade" onclick="buyUpgrade('miner')">
-                    <div class="left-section">
-                        <img src="./assets/miner.png" alt="" class="upgrade-image">
-                    </div>
-                    <div class="mid-section">
-                        <h4>miner</h4>
-                        <div class="cost-info">
-                            <p class="cost-text"> <span class="miner-cost">850</span> </p>
-                            <img src="./assets/gem.png" alt="" class="gem-img">
-                        </div>
-                    </div>
-                    <div class="right-section"> Level <span class="miner-level">0</span> </div>
-
-                    <div class="next-level-info">
-                        <p>+ <span class="miner-increase">24</span> gems <br /> per second</p>
-                    </div>
-                </div>
-                <div class="upgrade" onclick="buyUpgrade('factory')">
-                    <div class="left-section">
-                        <img src="./assets/factory.png" alt="" class="upgrade-image">
-                    </div>
-                    <div class="mid-section">
-                        <h4>factory</h4>
-                        <div class="cost-info">
-                            <p class="cost-text"> <span class="factory-cost">4750</span> </p>
-                            <img src="./assets/gem.png" alt="" class="gem-img">
-                        </div>
-                    </div>
-                    <div class="right-section"> Level <span class="factory-level">0</span> </div>
-
-                    <div class="next-level-info">
-                        <p>+ <span class="factory-increase">82</span> gems <br /> per second</p>
-                    </div>
                 </div>
             </div>
+
         </div>
 
         <div class="statistics">
@@ -96,15 +56,23 @@
                 <p>GPC : <span id="gpc-text" class="pink-text">1</span></p>
                 <p>GPS :<span id="gps-text" class="pink-text">0</span></p>
             </div>
+            <div class="relic">
+                Relic : <span id="relic">0</span>
+            </div>
         </div>
 
         <div class="util-buttons">
+            <button class="util-button prestige-button" onclick="prestige()">Prestige</button>
             <button class="util-button" onclick="save()">Save</button>
             <button class="util-button" onclick="load()">Load</button>
         </div>
+
+        
     </section>
 
 
-<script src="index.js"></script>
+<script type="module" src="index.js"></script>
+<script type="module" src="const/skills.js"></script>
+<script type="module" src="const/artifacts.js"></script>
 </body>
 </html>

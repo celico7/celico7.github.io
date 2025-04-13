@@ -16,12 +16,51 @@ body{
 .main{
     display: flex;
     gap: 200px;
+    margin-bottom: 100px;
 }
 
 .left{
     text-align: center;
     font-size: 25px;
 }
+
+.right-navbar{
+    display: flex;
+    font-weight: bold;
+}
+
+.right-navbar > div:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.right-navbar > div{
+    width: 140px;
+    height: 40px;
+    background-color: red;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.right-navbar > :first-child{
+    background-color: blue;
+}
+
+.right-navbar > :nth-child(2){
+    background-color: rgb(81, 8, 83);
+}
+
+#upgrades-container{
+    max-height: 400px;
+    width: 500px;
+    padding: 20px;
+    overflow-y: scroll;
+    border: 2px gray solid;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgb(140, 136, 136);
+    position: relative;
+}
+
 
 .pink-text{
     font-size: 32px;
@@ -65,12 +104,30 @@ body{
     border: 3px solid black;
     border-radius: 5px;
     padding: 13px 20px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
     position: relative;
     margin-bottom: 20px;
+}
+
+.upgrade:hover{
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.type-skill{
+    display: none;
+}
+
+.type-artifact{
+    display: none;
+}
+
+.upgrade-image{
+    width: 55px;
+}
+
+.gem-img{
+    width: 26px;
+    height: 25px;
 }
 
 .mid-section h4{
@@ -83,15 +140,6 @@ body{
     margin: 0;
 }
 
-.upgrade-image{
-    width: 55px;
-}
-
-.gem-img{
-    width: 26px;
-    height: 25px;
-}
-
 .cost-info{
     display: flex;
     gap: 5px;
@@ -102,21 +150,19 @@ body{
     position: absolute;
     right: -100px;
     background-color: rgb(78, 65, 78);
-    height: 80px;
+    height: 87px;
     width: 100px;
     text-align: center;
     display: none;
-}
-
-.upgrade:hover .next-level-info{
-    display: block;
+    font-size: 15px;
+    border-radius: 2px;
 }
 
 .statistics{
     position: absolute;
     bottom: 0;
     width: 450px;
-    padding: 30px;
+    padding: 10px;
     border: 2px white solid;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -157,6 +203,15 @@ body{
     cursor: pointer;
 }
 
+.relic {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
 .fade-up{
     animation: fade-up 1s;
 }
@@ -188,4 +243,20 @@ body{
         transform: translateY(-65px);
         opacity: 0;
 }
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(102, 102, 102);
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(166, 114, 51);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(164, 152, 164);
 }
