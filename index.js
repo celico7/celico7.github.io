@@ -1,5 +1,5 @@
-import { powerUpIntervals, upgrades } from "./const/upgrades.js";
-import { defaultSkillValues, defaultUpgradeValues } from "./const/defaultValues.js";
+import { powerUpIntervals, upgrades } from "./constants/upgrades.js";
+import { defaultSkillValues, defaultUpgradeValues } from "./constants/defaultValues.js";
 
 let gem = document.querySelector(".gem-cost");
 let parsedGem = parseFloat(gem.innerHTML);
