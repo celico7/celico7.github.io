@@ -1,15 +1,15 @@
 export const defaultUpgradeValues = [
-    {name: 'clicker', image: './assets/clicker-white.png', cost: 10, increase: 1, type: "upgrade"},
-    {name: 'pickaxe', image: './assets/pickaxe.png', cost: 60, increase: 4, type: "upgrade"},
-    {name: 'miner', image: './assets/miner.png', cost: 480, increase: 32, type: "upgrade"},
-    {name: 'factory', image: './assets/factory.png', cost: 4240, increase: 410, type: "upgrade"},
-    {name: 'potion', image: './assets/potion.png', cost: 52800, increase: 5500, type: "upgrade"},
+    {name: 'curseur', image: './assets/upgrades/cursor.png', cost: 10, increase: 1, type: "upgrade"},
+    {name: 'pioche', image: './assets/upgrades/pickaxe.png', cost: 60, increase: 4, type: "upgrade"},
+    {name: 'gnome', image: './assets/upgrades/miner.png', cost: 480, increase: 32, type: "upgrade"},
+    {name: 'usine', image: './assets/upgrades/factory.png', cost: 4240, increase: 410, type: "upgrade"},
+    {name: 'potion', image: './assets/upgrades/potion.png', cost: 52800, increase: 5500, type: "upgrade"},
   ]
   
   export const defaultSkillValues = [
    {
-    name: "Stronger Clicks",
-    description: "Double your clicking power for 30 seconds",
+    name: "Concentré de bonbons étoilés",
+    description: "+80 de clique pendant 30 secondes",
     image: "./assets/skills/skill1.png",
     cd: 600,
     cost: 12000,

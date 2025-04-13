@@ -64,14 +64,14 @@ function buyUpgrade(upgrade) {
       nextLevelDiv.style.cssText =  `background-color: #5A5959; font-weight: normal`;
       mu.cost.innerHTML = Math.round(mu.parsedCost *= mu.costMultiplier)
 
-      if ( mu.name === 'clicker' ) {
+      if ( mu.name === 'curseur' ) {
         gpc *= mu.powerUps[index].multiplier
-        nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per click`
+        nextLevelP.innerHTML = `+${mu.parsedIncrease} bonbons par clique`
       } else {
         gps -= mu.power
         mu.power *= mu.powerUps[index].multiplier
         gps += mu.power
-        nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per second`
+        nextLevelP.innerHTML = `+${mu.parsedIncrease} bonbons par clique`
       }
     } 
 
@@ -89,11 +89,11 @@ function buyUpgrade(upgrade) {
       mu.cost.innerHTML = Math.round(mu.parsedCost *= mu.costMultiplier)
       mu.parsedIncrease = parseFloat((mu.parsedIncrease * mu.gemMultiplier).toFixed(2))
 
-      if ( mu.name === 'clicker') nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per click`
-      else nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per second`
+      if ( mu.name === 'curseur') nextLevelP.innerHTML = `+${mu.parsedIncrease} bonbons par clique`
+      else nextLevelP.innerHTML = `+${mu.parsedIncrease} bonbons par clique`
     }
 
-    if ( mu.name === 'clicker' ) gpc += mu.parsedIncrease
+    if ( mu.name === 'curseur' ) gpc += mu.parsedIncrease
     else {
       gps -= mu.power
       mu.power += mu.parsedIncrease
@@ -158,7 +158,7 @@ function prestige () {
 
     upgradeDiv.style.cssText = `border-color: white`;
     nextLevelDiv.style.cssText =  `background-color: #5A5959; font-weight: normal`;
-    nextLevelP.innerHTML = `+${mu.increase} gems per click`
+    nextLevelP.innerHTML = `+${mu.increase} bonbons par clique`
   })
 
   relic.innerHTML = Math.ceil(Math.sqrt(parsedGem - 999999) / 300)
@@ -168,6 +168,82 @@ function prestige () {
   parsedGem = 0
   gem.innerHTML = parsedGem
 }
+
+function initializeUI() {
+  setActiveTab(upgradesNavButton); // Par défaut, on commence sur "Upgrades"
+  const upgradeContainers = document.querySelectorAll(".upgrade");
+
+  upgradeContainers.forEach((container) => {
+    if (container.classList.contains("type-upgrade")) container.style.display = "flex";
+    else container.style.display = "none";
+  });
+
+  updateUpgradesVisibility(); // Cache les upgrades trop chères
+}
+
+initializeUI();
+
+
+function updateUpgradesVisibility() {
+  
+  const isUpgradesTabActive = upgradesNavButton.classList.contains("active"); // Vérifie si l'onglet "Améliorations" est actif
+
+  if (!isUpgradesTabActive) return; // Ne fait rien si l'onglet "Améliorations" n'est pas actif
+
+  upgrades.forEach((upgrade) => {
+    const upgradeDiv = document.getElementById(`${upgrade.name}-upgrade`);
+    const level = parseInt(upgrade.level.innerHTML, 10); // Récupère le niveau actuel de l'amélioration
+
+    if (level > 0 || parsedGem >= upgrade.parsedCost) {
+      upgradeDiv.style.display = "flex"; // Affiche l'amélioration
+    } else {
+      upgradeDiv.style.display = "none"; // Cache l'amélioration
+    }
+  });
+}
+
+// Ajoutez une classe "active" à l'onglet actif
+function setActiveTab(tabButton) {
+  document.querySelectorAll(".right-navbar > div").forEach((button) => {
+    button.classList.remove("active");
+  });
+  tabButton.classList.add("active");
+}
+
+// Modifiez les gestionnaires d'événements pour activer les onglets
+skillsNavButton.addEventListener("click", function () {
+  setActiveTab(skillsNavButton);
+  const upgradeContainers = document.querySelectorAll(".upgrade");
+
+  upgradeContainers.forEach((container) => {
+    if (container.classList.contains("type-skill")) container.style.display = "flex";
+    else container.style.display = "none";
+  });
+});
+
+upgradesNavButton.addEventListener("click", function () {
+  setActiveTab(upgradesNavButton);
+  const upgradeContainers = document.querySelectorAll(".upgrade");
+
+  upgradeContainers.forEach((container) => {
+    if (container.classList.contains("type-upgrade")) container.style.display = "flex";
+    else container.style.display = "none";
+  });
+
+});
+
+artifactsNavButton.addEventListener("click", function () {
+  setActiveTab(artifactsNavButton);
+  const upgradeContainers = document.querySelectorAll(".upgrade");
+
+  upgradeContainers.forEach((container) => {
+    if (container.classList.contains("type-artifact")) container.style.display = "flex";
+    else container.style.display = "none";
+  });
+});
+
+// Appeler updateUpgradesVisibility immédiatement après le chargement de la page
+updateUpgradesVisibility();
 
 setInterval(() => {
   parsedGem += gps / 10
@@ -180,34 +256,9 @@ setInterval(() => {
   } else {
     prestigeButton.style.display = "none"
   }
-}, 100)
 
-skillsNavButton.addEventListener("click", function() {
-  const upgradeContainers = document.querySelectorAll(".upgrade")
-
-  upgradeContainers.forEach((container) => {
-    if ( container.classList.contains('type-skill') ) container.style.display = "flex"
-    else container.style.display = "none"
-  })
-})
-
-upgradesNavButton.addEventListener("click", function() {
-  const upgradeContainers = document.querySelectorAll(".upgrade")
-
-  upgradeContainers.forEach((container) => {
-    if ( container.classList.contains('type-upgrade')) container.style.display = "flex"
-    else container.style.display = "none"
-  })
-})
-
-artifactsNavButton.addEventListener("click", function() {
-  const upgradeContainers = document.querySelectorAll(".upgrade")
-
-  upgradeContainers.forEach((container) => {
-    if ( container.classList.contains('type-artifact')) container.style.display = "flex"
-    else container.style.display = "none"
-  })
-})
+  updateUpgradesVisibility(); // Met à jour la visibilité des améliorations
+}, 100);
 
 window.incrementGem = incrementGem
 window.buyUpgrade = buyUpgrade 
