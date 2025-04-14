@@ -8,11 +8,13 @@ export const defaultUpgradeValues = [
   
   export const defaultSkillValues = [
    {
-    name: "Concentré de bonbons étoilés",
+    name: "concentré étoilé",
     description: "+80 de clique pendant 30 secondes",
     image: "./assets/skills/skill1.png",
+    increase: 80,
     cd: 600,
     cost: 12000,
+    duration: 30000,
     type: "skill"
    },
    {

@@ -17,3 +17,15 @@ function createUpgrades() {
 }
 
 createUpgrades()
+
+export const skill = [
+  {
+  name: 'concentré étoilé',
+    cost: document.querySelector(".concentré étoilé-cost"),
+    parsedCost: parseFloat(document.querySelector(".concentré étoilé-cost").innerHTML),
+    increase: document.querySelector(".concentré étoilé-increase"),
+    parsedIncrease: parseFloat(document.querySelector(".concentré étoilé-increase").innerHTML),
+    gemMultiplier: 1.025,
+    costMultiplier: 1.12,
+  },
+]

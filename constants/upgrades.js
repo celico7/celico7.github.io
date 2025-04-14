@@ -43,7 +43,7 @@ export const upgrades = [
         multiplier: 2,
       },
     ],
-    gemMultiplier: 1.025,
+    gemMultiplier: 1,
     costMultiplier: 1.12,
   },
   {
@@ -71,7 +71,7 @@ export const upgrades = [
       },
     ],
     power: 0,
-    gemMultiplier: 1.03,
+    gemMultiplier: 1,
     costMultiplier: 1.115,
   },
   {
@@ -82,7 +82,7 @@ export const upgrades = [
     parsedIncrease: parseFloat(document.querySelector(".gnome-increase").innerHTML),
     level: document.querySelector(".gnome-level"),
     power: 0,
-    gemMultiplier: 1.035,
+    gemMultiplier: 1,
     costMultiplier: 1.11,
   },
   {
@@ -93,7 +93,7 @@ export const upgrades = [
     parsedIncrease: parseFloat(document.querySelector(".usine-increase").innerHTML),
     level: document.querySelector(".usine-level"),
     power: 0,
-    gemMultiplier: 1.04,
+    gemMultiplier: 1,
     costMultiplier: 1.10,
   },
   {
@@ -104,7 +104,7 @@ export const upgrades = [
     parsedIncrease: parseFloat(document.querySelector(".potion-increase").innerHTML),
     level: document.querySelector(".potion-level"),
     power: 0,
-    gemMultiplier: 1.045,
+    gemMultiplier: 1,
     costMultiplier: 1.096,
   },
 ]
