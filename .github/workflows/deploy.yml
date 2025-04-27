@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy SnakeGame to GitHub Pages
 
 on:
   push:
     branches:
-      - main  
+      - main   
 
 jobs:
   build-and-deploy:
@@ -13,18 +13,26 @@ jobs:
       - name: Checkout 
         uses: actions/checkout@v4
 
+      - name: Set working directory
+        run: cd SnakeGame
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20  
+          node-version: 20
+
       - name: Install dependencies 
-        run: npm install
+        run: |
+          cd SnakeGame
+          npm install
 
       - name: Build project 
-        run: npm run build
+        run: |
+          cd SnakeGame
+          npm run build
 
       - name: Deploy to GitHub Pages 
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages       
-          folder: dist            
+          folder: SnakeGame/dist     
