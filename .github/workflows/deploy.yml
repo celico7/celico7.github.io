@@ -31,3 +31,8 @@ jobs:
         with:
           branch: gh-pages
           folder: SnakeGame/dist
+
+      - name: Clean dist directory 🧹
+        run: rm -rf dist/
+        working-directory: SnakeGame
+
