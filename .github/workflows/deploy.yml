@@ -22,12 +22,16 @@ jobs:
         run: npm install
         working-directory: SnakeGame
 
+      - name: Ensure vite is installed
+        run: npm install vite --save-dev
+        working-directory: SnakeGame
+
       - name: Verify dependencies and permissions
         run: ls -la node_modules/.bin
         working-directory: SnakeGame
 
       - name: Build project 
-        run: npm run build
+        run: npx vite build
         working-directory: SnakeGame
 
       - name: Deploy to GitHub Pages 
@@ -36,6 +40,6 @@ jobs:
           branch: gh-pages
           folder: SnakeGame/dist
 
-      - name: Clean dist directory 🧹
+      - name: Clean dist directory 
         run: rm -rf dist/
         working-directory: SnakeGame
