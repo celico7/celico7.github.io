@@ -1,12 +1,5 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/SnakeGame/',  
-  build: {
-    outDir: 'dist',     
-    assetsDir: 'assets', 
-  },
-  preview: {
-    base: '/SnakeGame/', 
-  },
-})
+  base: './', 
+});
