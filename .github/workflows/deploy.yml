@@ -30,6 +30,10 @@ jobs:
         run: ls -la node_modules/.bin
         working-directory: SnakeGame
 
+      - name: Fix permissions for binaries
+        run: chmod +x node_modules/.bin/* 
+        working-directory: SnakeGame
+
       - name: Build project 
         run: npx vite build
         working-directory: SnakeGame
