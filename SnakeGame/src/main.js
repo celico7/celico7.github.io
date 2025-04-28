@@ -284,10 +284,10 @@ document.addEventListener("keydown", (event) => {
         case "q":
             serpent1.changeDirection(3);
             break;
-        case " ":
-            serpent1.extend();
-            console.log("Nombre d'anneaux après l'allongement :", serpent1.anneaux.length);
-            break;
+        //case " ":
+          //  serpent1.extend();
+            //console.log("Nombre d'anneaux après l'allongement :", serpent1.anneaux.length);
+            //break;
     }
 });
 
