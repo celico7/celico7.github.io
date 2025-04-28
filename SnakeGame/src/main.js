@@ -1,5 +1,5 @@
 import "./style.css";
-import { getRandomInt, getRandomColor } from "./utils";
+import { getRandomInt, getRandomColor } from "./utils.js";
 
 const canvas = document.getElementById("terrain");
 const ctx = canvas.getContext("2d");
